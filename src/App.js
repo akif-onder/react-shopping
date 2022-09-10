@@ -1,12 +1,26 @@
 
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import Navbar from './components/navbar';
+import Amazon from './components/Amazon';
+import Navbar from './components/Navbar';
+
 
 function App() {
+
+  const [show, setShow] = useState(true);
+  const [cart, setCart] = useState([]);
+
+  const handleClick = (item) => {
+    if (cart.includes(item)) return
+    setCart([...cart, item])
+  }
+
   return (
-    <div className="App">
+    <React.Fragment>
+      <Navbar/>
+      <Amazon handleClick={handleClick} />
       
-    </div>
+    </React.Fragment>
   );
 }
 
