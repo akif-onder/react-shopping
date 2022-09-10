@@ -17,7 +17,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Navbar/>
+      <Navbar setShow={setShow} />
       <Amazon handleClick={handleClick} />
       
     </React.Fragment>
